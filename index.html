@@ -12,10 +12,10 @@
 
 <body style="margin: 0; overflow: hidden;">
 
-  <!-- Escena de Realidad Aumentada -->
-  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+  <!-- Escena de Realidad Aumentada con resolución ajustada para evitar el zoom exagerado -->
+  <a-scene embedded arjs="sourceType: webcam; sourceWidth: 640; sourceHeight: 480; displayWidth: 640; displayHeight: 480; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
     
-    <!-- Marcador por defecto 'Hiro' (puedes cambiarlo después por uno propio) -->
+    <!-- Marcador por defecto 'Hiro' -->
     <a-marker preset="hiro">
       
       <!-- Objeto 3D interactivo sobre el marcador -->
@@ -40,7 +40,7 @@
 
       caja.addEventListener('click', () => {
         alert('¡Bien hecho! Tocaste el objeto interactivo de INACAP.');
-        caja.setAttribute('material', 'color', '#1976D2'); // Cambia a azul al tocarlo
+        caja.setAttribute('material', 'color', '#1976D2');
       });
     });
   </script>
